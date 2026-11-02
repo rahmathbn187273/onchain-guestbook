@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>On-Chain Guestbook</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>📖 On-Chain Guestbook</h1>
+      <p class="subtitle">Leave a message on the Sepolia blockchain.</p>
+    </header>
+
+    <div id="banner" class="banner hidden"></div>
+
+    <section class="card">
+      <div class="row">
+        <button id="connect-btn">Connect MetaMask</button>
+        <button id="switch-btn" class="secondary hidden">Switch to Sepolia</button>
+      </div>
+      <dl class="info">
+        <dt>Account</dt><dd id="account">Not connected</dd>
+        <dt>Network</dt><dd id="network">-</dd>
+        <dt>Total messages</dt><dd id="count">-</dd>
+      </dl>
+    </section>
+
+    <section class="card">
+      <h2>Post a message</h2>
+      <form id="post-form">
+        <textarea id="message-input" rows="3" placeholder="Write something nice…"></textarea>
+        <div class="row between">
+          <span id="char-count" class="muted">0 / 280 bytes</span>
+          <button type="submit" id="post-btn" disabled>Post to blockchain</button>
+        </div>
+      </form>
+      <div id="status" class="status hidden" role="status" aria-live="polite"></div>
+    </section>
+
+    <section class="card">
+      <div class="row between">
+        <h2>Recent messages</h2>
+        <button id="refresh-btn" class="secondary small">Refresh</button>
+      </div>
+      <ul id="messages" class="messages"></ul>
+    </section>
+
+    <footer class="muted">
+      Contract: <a id="contract-link" href="#" target="_blank" rel="noopener">-</a>
+    </footer>
+  </main>
+
+  <!-- ethers v6 (UMD build, no build step needed) -->
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
