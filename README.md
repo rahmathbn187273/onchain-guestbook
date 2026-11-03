@@ -31,7 +31,7 @@ frontend/                   index.html, style.css, app.js, config.js
 1. **Prerequisites:** Node.js 20 or 22 LTS, MetaMask.
 2. **Install:**
    ```bash
-   git clone <YOUR_REPO_URL>
+   git clone https://github.com/rahmathbn187273/onchain-guestbook.git
    cd onchain-guestbook
    npm install
    ```
